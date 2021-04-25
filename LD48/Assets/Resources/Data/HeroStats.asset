@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 9999
   AttackDamage: 9999
-  AttackRange: 0.41
+  AttackRange: 1.2
   AttackInterval: 1
   Speed: 0
   Defence: 0
