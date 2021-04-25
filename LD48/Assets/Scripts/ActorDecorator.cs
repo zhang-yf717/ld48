@@ -7,7 +7,7 @@ public abstract class ActorDecorator : Actor {
     public ActorDecorator(Actor targetActor) {
         _decoratee = targetActor;
     }
-    public override void OnAttack(GameObject target) {
+    public override void OnAttack(Actor target) {
         _decoratee.OnAttack(target);
     }
 }

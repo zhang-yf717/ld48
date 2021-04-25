@@ -8,6 +8,7 @@ public class SO_Stats : ScriptableObject {
     public float Health;
     public float AttackDamage;
     public float AttackRange;
+    public float AttackInterval;
     public float Speed;
     public float Defence;
     public float HealthRegen;
