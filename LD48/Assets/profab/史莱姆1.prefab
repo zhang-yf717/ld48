@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0348895c2667e264cb7a4e9325a0e4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statsFoldout: 0
+  statsFoldout: 1
   statsData: {fileID: 11400000, guid: acffd64b21d79fb4ba24e6d3aa275ccf, type: 2}
 --- !u!50 &-5320886304137050153
 Rigidbody2D:
