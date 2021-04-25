@@ -55,8 +55,8 @@ public abstract class Actor : MonoBehaviour {
 
     protected bool _isAttacking, _isDamagedColorChanging;
     protected float _attackCooldown;
-    public virtual bool isAttacking { get => _isAttacking; protected set => _isAttacking = value; }
-    public virtual bool IsDamagedColorChanging { get => _isDamagedColorChanging; protected set => _isDamagedColorChanging = value; }
+    public virtual bool isAttacking { get => _isAttacking; set => _isAttacking = value; }
+    public virtual bool IsDamagedColorChanging { get => _isDamagedColorChanging; set => _isDamagedColorChanging = value; }
 
     public virtual void OnAttack(Actor target) {
         // Debug.Log("Actor: " + gameObject.name + " attacks " + target.name);

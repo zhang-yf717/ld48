@@ -3,7 +3,6 @@ using DG.Tweening;
 
 public class Slime : Actor
 {
-    
     protected Hero _target;
     protected Hero Target { 
         get {
@@ -13,10 +12,8 @@ public class Slime : Actor
             return _target;
         }
     }
-
     private Vector2 TargetPos => Target.transform.position;
     private float _dist => Utils.Distance(Position, TargetPos);
-
     public override void OnAttack(Actor hero) {
         base.OnAttack(hero);
         Rigidbody.velocity = Vector3.zero;
@@ -27,7 +24,10 @@ public class Slime : Actor
     public override void OnDamaged(float dmg) {
         base.OnDamaged(dmg);
     }
-
+    public override void Die() {
+        GameManager.Instance.OnSlimeCountChange();
+        base.Die();
+    }
     protected void FixedUpdate() {
         if (Utils.Distance(Position, TargetPos) <= AtkRange) {
             if (Rigidbody.bodyType != RigidbodyType2D.Kinematic) {
@@ -43,13 +43,11 @@ public class Slime : Actor
             OnMove(_next_pos);
         }
     }
-
     protected override void Update() {
         if (Utils.Distance(Position, TargetPos) <= AtkRange) {
             _attackCooldown -= Time.deltaTime;
         }
     }
-
     private void OnDrawGizmos() {
         Gizmos.color = Color.white;
         if (AtkRange >= _dist) Gizmos.color = Color.red;

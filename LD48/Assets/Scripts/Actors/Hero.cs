@@ -5,10 +5,12 @@ using UnityEngine;
 public class Hero : Actor {
     private void Start() {
         punchScale = 0.05f;
+        UIManager.Instance.SetHealthlabel(stats.Health, statsData.Health);
     }
 
     public override void OnDamaged(float dmg) {
         base.OnDamaged(dmg);
+        UIManager.Instance.SetHealthlabel(stats.Health, statsData.Health);
     }
     public override void OnAttack(Actor target) {
         base.OnAttack(target);
