@@ -1,55 +1,58 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using DG.Tweening;
 
 public class Slime : Actor
 {
-    protected Transform _target;
-    protected Transform Target { 
+    
+    protected Hero _target;
+    protected Hero Target { 
         get {
             if (_target == null) {
-                _target = GameObject.FindGameObjectWithTag("Player").transform;
+                _target = FindObjectOfType<Hero>();
             }
             return _target;
         }
     }
-    protected Vector3 _dir {
-        get => Utils.Direction(transform.position, Target.position);
-    }
-    protected float _dist {
-        get => Utils.Distance(transform.position, Target.position);
-    }
 
-    public override void OnAttack(GameObject target) {
+    private Vector2 TargetPos => Target.transform.position;
+    private float _dist => Utils.Distance(Position, TargetPos);
+
+    public override void OnAttack(Actor hero) {
+        base.OnAttack(hero);
         Rigidbody.velocity = Vector3.zero;
     }
     public override void OnMove(Vector3 loc) {
         Rigidbody.MovePosition(loc);
     }
-    public override void OnDamaged() {
-        base.OnDamaged();
+    public override void OnDamaged(float dmg) {
+        base.OnDamaged(dmg);
     }
 
-    public void FixedUpdate() {
-        if (_dist <= AtkRange) {
+    protected void FixedUpdate() {
+        if (Utils.Distance(Position, TargetPos) <= AtkRange) {
             if (Rigidbody.bodyType != RigidbodyType2D.Kinematic) {
                 Rigidbody.bodyType = RigidbodyType2D.Kinematic;
             }
-            OnAttack(Target.gameObject);
+            OnAttack(Target);
+            
         } else {
             if (Rigidbody.bodyType != RigidbodyType2D.Dynamic) {
                 Rigidbody.bodyType = RigidbodyType2D.Dynamic;
             }
-            var _next_pos = transform.position + _dir * stats.Speed;
+            var _next_pos = Utils.Direction(Position, TargetPos) * stats.Speed + Position;
             OnMove(_next_pos);
         }
     }
-    
-    
+
+    protected override void Update() {
+        if (Utils.Distance(Position, TargetPos) <= AtkRange) {
+            _attackCooldown -= Time.deltaTime;
+        }
+    }
 
     private void OnDrawGizmos() {
         Gizmos.color = Color.white;
         if (AtkRange >= _dist) Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, AtkRange);
+        Gizmos.DrawWireSphere(Position, AtkRange);
     }
 }
