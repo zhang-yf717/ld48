@@ -15,7 +15,6 @@ MonoBehaviour:
   Health: 0
   AttackDamage: 9.56
   AttackRange: 0.33
-  AttackInterval: 1
-  Speed: 0.03
+  Speed: 0.1
   Defence: 5
   HealthRegen: 0
