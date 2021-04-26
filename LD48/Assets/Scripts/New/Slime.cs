@@ -19,10 +19,10 @@ public class Slime : Actor
     
     // Start is called before the first frame update
     void Start() {
-        scale_x_tweener = transform.DOScaleX(1.25f, 0.5f)
+        scale_x_tweener = transform.DOScaleX(1.25f, 0.3f)
             .SetLoops(2, LoopType.Yoyo)
             .SetAutoKill(false);
-        scale_y_tweener = transform.DOScaleY(.8f, 0.5f)
+        scale_y_tweener = transform.DOScaleY(.8f, 0.3f)
             .SetLoops(2, LoopType.Yoyo)
             .SetAutoKill(false);
 
@@ -34,18 +34,29 @@ public class Slime : Actor
         };
 
         OnAttack += (Actor actor) => {
-            Debug.Log(name + " attacking!");
+            // Debug.Log(name + " attacking!");
 
+            // ------ placeholder attack animation
             Vector3 dir = (Target.transform.position - transform.position).normalized;
             if (attack_tweener == null || !attack_tweener.IsPlaying()) {
-                attack_tweener = transform.DOPunchPosition(dir * data.AtkRange / 2, data.AtkIntv, 0);
-                attack_tweener.Play();
+                attack_tweener = transform.DOPunchPosition(dir * data.AtkRange / 2, data.AtkIntv, 3, 0);
+                attack_tweener.Restart();
             }
+            // ------
+
+
             actor.OnDamaged(data.Atk);
         };
 
         OnDamaged += (float dmg) => {
             data.Health -= dmg;
+            if (data.Health <= 0) {
+                OnDie();
+            }
+        };
+
+        OnDie += () => {
+            Destroy(gameObject);
         };
     }
 
