@@ -53,7 +53,7 @@ public class Slime : Actor
         };
 
         OnDamaged += (float dmg) => {
-            data.Health -= dmg;
+            data.Health -= Mathf.Max(0, dmg + data.Def);
             if (data.Health <= 0) {
                 OnDie();
             }
@@ -80,6 +80,7 @@ public class Slime : Actor
                 atkTimer = data.AtkIntv;
             }
         }
+        data.Health = Mathf.Min(data.Health + Time.deltaTime, data.MaxHealth);
     }
 
     // Update is called once per frame

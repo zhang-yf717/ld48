@@ -28,7 +28,7 @@ public class Hero : Actor
 
         OnDamaged += (float dmg) => {
             Debug.Log("Hero is Damaged by " + dmg);
-            data.Health -= dmg;
+            data.Health -= Mathf.Max(0, dmg + data.Def);
 
             // --- placeholder animation
             if (damaged_tweener == null|| !damaged_tweener.IsPlaying()) {

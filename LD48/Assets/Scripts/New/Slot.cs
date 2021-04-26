@@ -10,6 +10,7 @@ public class Slot : MonoBehaviour, IDropHandler {
         //     = GetComponent<RectTransform>().anchoredPosition;
         var draggable = eventData.pointerDrag.GetComponent<Draggable>();
         draggable.ApplyEffect(group);
+        draggable.CanvasGroup.blocksRaycasts = true;
         draggable.gameObject.SetActive(false);
         var cnt = 0;
         foreach (var loc in UIManager.Instance.powerupLocations) {
