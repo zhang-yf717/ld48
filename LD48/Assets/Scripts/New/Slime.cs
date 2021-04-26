@@ -19,6 +19,8 @@ public class Slime : Actor
     
     // Start is called before the first frame update
     void Start() {
+        data.Health = data.MaxHealth;
+
         scale_x_tweener = transform.DOScaleX(1.25f, 0.3f)
             .SetLoops(2, LoopType.Yoyo)
             .SetAutoKill(false);
@@ -28,6 +30,8 @@ public class Slime : Actor
 
         OnMove += () => {
             Vector3 dir = (Target.transform.position - transform.position).normalized;
+            if (dir.x > 0.01f && !spriteRenderer.flipX) spriteRenderer.flipX = true;
+            else if (dir.x < -0.01f && spriteRenderer.flipX) spriteRenderer.flipX = false;
             rigidbody.MovePosition(transform.position + dir * data.Speed);
             if (!scale_x_tweener.IsPlaying()) scale_x_tweener.Restart();
             if (!scale_y_tweener.IsPlaying()) scale_y_tweener.Restart();
@@ -39,7 +43,7 @@ public class Slime : Actor
             // ------ placeholder attack animation
             Vector3 dir = (Target.transform.position - transform.position).normalized;
             if (attack_tweener == null || !attack_tweener.IsPlaying()) {
-                attack_tweener = transform.DOPunchPosition(dir * data.AtkRange / 2, data.AtkIntv, 3, 0);
+                attack_tweener = transform.DOPunchPosition(dir * Vector3.Distance(Target.transform.position, transform.position), data.AtkIntv, 3, 0);
                 attack_tweener.Restart();
             }
             // ------
@@ -56,7 +60,12 @@ public class Slime : Actor
         };
 
         OnDie += () => {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            data.Health = data.MaxHealth;
+            GameManager.Instance.slimeCount -= 1;
+            if (GameManager.Instance.slimeCount == 0) {
+                GameManager.Instance.TurnOver();
+            }
         };
     }
 

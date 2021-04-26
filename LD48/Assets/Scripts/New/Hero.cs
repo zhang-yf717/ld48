@@ -10,7 +10,6 @@ public class Hero : Actor
 
     private void Start() {
         atkTimer = data.AtkIntv;
-        
 
         OnAttack += (Actor actor) => {
             atkTimer = data.AtkIntv;
@@ -18,7 +17,7 @@ public class Hero : Actor
             // --- placeholder animation
             Vector3 dir = (actor.transform.position - transform.position).normalized;
             if (attack_tweener == null || !attack_tweener.IsPlaying()) {
-                attack_tweener = transform.DOPunchPosition(dir * data.AtkRange / 2, data.AtkIntv/1.5f, 0, 0);
+                attack_tweener = transform.DOPunchPosition(dir * Vector3.Distance(actor.transform.position, transform.position), data.AtkIntv/1.5f, 1, 0);
                 attack_tweener.Play();
             }
             // -------------------------
@@ -42,15 +41,14 @@ public class Hero : Actor
     }
 
     private void Update() {
-        Slime[] slimes = FindObjectsOfType<Slime>();
-        foreach (var slime in slimes) {
-            if (Vector2.Distance(slime.transform.position, 
-                transform.position) <= data.AtkRange) {
-                atkTimer -= Time.deltaTime;
-                if (atkTimer <= 0) {
-                    OnAttack(slime);
-                    return;
-                }
+        var slimes = Physics2D.OverlapCircleAll(transform.position, data.AtkRange, GameManager.Instance.slimeLayer);
+        
+        if (slimes.Length > 0) {
+            atkTimer -= Time.deltaTime;
+            var slime = slimes[0].GetComponent<Actor>();
+            if (atkTimer <= 0) {
+                OnAttack(slime);
+                return;
             }
         }
     }

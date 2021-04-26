@@ -4,11 +4,16 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 
-public class DraggableItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
+public class Draggable : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
     IBeginDragHandler, IEndDragHandler, IDragHandler {
 
-    [SerializeField]
     private Canvas canvas;
+    private Canvas Canvas {
+        get {
+            if (!canvas) canvas = GetComponentInParent<Canvas>();
+            return canvas;
+        }
+    }
     public RectTransform RectTransform {
         get {
             if (rectTransform == null) {
@@ -27,6 +32,7 @@ public class DraggableItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     }
 
 
+
     private float timer;
 
     private bool isDragging;
@@ -38,7 +44,7 @@ public class DraggableItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     private void Start() {
         start = RectTransform.localPosition;
-        //timer = UIManager.Instance.infoTipShowTime;
+        timer = UIManager.Instance.infoTip_ShowTime;
     }
 
     public void OnBeginDrag(PointerEventData eventData) {
@@ -48,7 +54,8 @@ public class DraggableItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     }
 
     public void OnDrag(PointerEventData eventData) {
-        RectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        Debug.Log(Canvas.scaleFactor);
+        RectTransform.anchoredPosition += eventData.delta / Canvas.scaleFactor;
     }
 
     public void OnEndDrag(PointerEventData eventData) {
@@ -63,20 +70,26 @@ public class DraggableItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerExit(PointerEventData eventData) {
         isMouseOver = false;
-        //timer = UIManager.Instance.infoTipShowTime;
-        //UIManager.Instance.InfoTip.SetActive(false);
+        timer = UIManager.Instance.infoTip_ShowTime;
+        UIManager.Instance.InfoTip.SetActive(false);
     }
 
     public void Update() {
-        //if (!isDragging && isMouseOver) {
-        //    if (timer > 0) {
-        //        timer -= Time.deltaTime;
-        //    } else if (timer <= 0) {
-        //        if (!UIManager.Instance.InfoTip.activeSelf)
-        //            UIManager.Instance.InfoTip.SetActive(true);
-        //    }
-        //}
+        if (!isDragging && isMouseOver) {
+            if (timer > 0) {
+                timer -= Time.deltaTime;
+            } else if (timer <= 0) {
+                if (!UIManager.Instance.InfoTip.activeSelf)
+                    UIManager.Instance.InfoTip.SetActive(true);
+            }
+        }
     }
 
+    protected virtual void OnDestroy() {
+        Debug.Log(name + " is Destroyed...");
+    }
 
+    public virtual void ApplyEffect(int n) {
+
+    }
 }

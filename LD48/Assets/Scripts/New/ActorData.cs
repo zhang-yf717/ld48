@@ -6,5 +6,5 @@ using UnityEngine;
 [Serializable]
 public class ActorData
 {
-    public float Health, Atk, AtkRange, AtkIntv, Def, Regen, Speed;
+    public float Health, MaxHealth, Atk, AtkRange, AtkIntv, Def, Regen, Speed;
 }

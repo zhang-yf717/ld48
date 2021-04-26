@@ -17,12 +17,19 @@ public abstract class Actor : MonoBehaviour
             return _rb;
         }
     }
+    SpriteRenderer _sr;
+    protected SpriteRenderer spriteRenderer {
+        get {
+            if (!_sr) _sr = transform.GetChild(0).GetComponent<SpriteRenderer>();
+            return _sr;
+        }
+    }
     #endregion
 
-    protected Action OnMove;
-    protected Action OnDie;
+    public Action OnMove;
+    public Action OnDie;
     public Action<float> OnDamaged;
-    protected Action<Actor> OnAttack;
+    public Action<Actor> OnAttack;
 
     protected float atkTimer;
 }

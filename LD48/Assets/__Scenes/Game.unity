@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -365,10 +365,10 @@ RectTransform:
   m_Father: {fileID: 262071829}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -133.56}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &280271460
 MonoBehaviour:
@@ -533,10 +533,10 @@ RectTransform:
   m_Father: {fileID: 262071829}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 142.68, y: -40}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &420470944
 MonoBehaviour:
@@ -720,10 +720,10 @@ RectTransform:
   m_Father: {fileID: 465119818}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 66.685745, y: -20.926579}
-  m_SizeDelta: {x: 113.37149, y: 21.853157}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 21.853157}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &476772148
 MonoBehaviour:
@@ -955,10 +955,10 @@ RectTransform:
   m_Father: {fileID: 262071829}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 40, y: -40}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &534439529
 MonoBehaviour:
@@ -1169,7 +1169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e0948608e7d2a4fba85b232864d4cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 113271243}
 --- !u!225 &608968066
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1270,7 +1269,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e0948608e7d2a4fba85b232864d4cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 113271243}
 --- !u!225 &614620499
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1335,7 +1333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ccd6d51bee790e48ac6a847d94b50d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentCanvas: {fileID: 113271243}
 --- !u!114 &654135965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1473,7 +1470,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e0948608e7d2a4fba85b232864d4cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 113271243}
 --- !u!225 &720669997
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -1615,8 +1611,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fcb91973d336e24da9092ff577921ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statsFoldout: 1
-  statsData: {fileID: 11400000, guid: 22e0fbfdb121f344cb00204279739eb4, type: 2}
 --- !u!4 &874823358
 Transform:
   m_ObjectHideFlags: 0
@@ -1739,7 +1733,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1cc7c464469434c8e25b62f68563b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SlimeGroups: []
 --- !u!4 &1077869020
 Transform:
   m_ObjectHideFlags: 0
@@ -1874,7 +1867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1198509082
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2066,7 +2059,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e0948608e7d2a4fba85b232864d4cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 113271243}
 --- !u!114 &1222406422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2424,8 +2416,8 @@ GameObject:
   - component: {fileID: 1635863472}
   - component: {fileID: 1635863474}
   - component: {fileID: 1635863473}
-  - component: {fileID: 1635863475}
   - component: {fileID: 1635863476}
+  - component: {fileID: 1635863475}
   m_Layer: 5
   m_Name: Power-up Option (0)
   m_TagString: Untagged
@@ -2498,10 +2490,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1635863471}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81e0948608e7d2a4fba85b232864d4cf, type: 3}
+  m_Script: {fileID: 11500000, guid: ad1fcb84ab5ba454390a6bdaaeb1dc06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 113271243}
 --- !u!225 &1635863476
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2638,7 +2629,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e0948608e7d2a4fba85b232864d4cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 113271243}
 --- !u!225 &1799717279
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2684,10 +2674,10 @@ RectTransform:
   m_Father: {fileID: 262071829}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 142.68, y: -133.56}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1868352225
 MonoBehaviour:
@@ -2912,11 +2902,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cabb7165efae73d43a344e2981ba3bab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infoTip: {fileID: 654135962}
-  infoTipShowTime: 1
-  healthFillImage: {fileID: 1358554305}
-  healthLabel: {fileID: 875967127}
-  slimeCountLable: {fileID: 531721562}
 --- !u!4 &1937330162
 Transform:
   m_ObjectHideFlags: 0
