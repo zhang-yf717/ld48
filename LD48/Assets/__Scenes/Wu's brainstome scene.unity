@@ -5316,6 +5316,7 @@ Transform:
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!95 &1240157596
 Animator:
   serializedVersion: 3
@@ -5336,6 +5337,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+=======
+>>>>>>> parent of cda3636 (动画链接尝试中)
 =======
 >>>>>>> parent of cda3636 (动画链接尝试中)
 --- !u!1 &1258403041
