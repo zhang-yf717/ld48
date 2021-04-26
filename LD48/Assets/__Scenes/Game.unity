@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -430,7 +430,7 @@ GameObject:
   - component: {fileID: 356484697}
   - component: {fileID: 356484696}
   m_Layer: 0
-  m_Name: 0de41802b7567e25eaa8d7bbc7ffde3
+  m_Name: BG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1739,12 +1739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1cc7c464469434c8e25b62f68563b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slime: {fileID: 3724577100274169981, guid: 458405812243fb14a8fe0fae7b50e882, type: 3}
-  spawnPosition:
-  - {fileID: 1221824720}
-  - {fileID: 2034240728}
-  - {fileID: 1116866645}
-  - {fileID: 1912321475}
+  SlimeGroups: []
 --- !u!4 &1077869020
 Transform:
   m_ObjectHideFlags: 0
