@@ -1786,7 +1786,6 @@ PrefabInstance:
     - target: {fileID: 2350569342606640639, guid: 74bd1b5cf4ae2c845967d938844996e8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
       value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2350569342606640639, guid: 74bd1b5cf4ae2c845967d938844996e8,
@@ -3905,7 +3904,6 @@ RectTransform:
   - {fileID: 1395171021}
   - {fileID: 602190285}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4322,11 +4320,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2.3, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
-  m_Children:
-  - {fileID: 1087682222}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &898293476
@@ -4635,8 +4630,6 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068402810}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.47, y: -0.67, z: 1}
-  m_LocalScale: {x: 0.66, y: 0.66, z: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4703,9 +4696,6 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087682221}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.23, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -4714,8 +4704,8 @@ Transform:
   - {fileID: 898293477}
   - {fileID: 1413362947}
   - {fileID: 679358871}
-  m_Father: {fileID: 856409299}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1134071177
 GameObject:
@@ -5254,7 +5244,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1240157595}
   - component: {fileID: 1240157594}
-  - component: {fileID: 1240157596}
   m_Layer: 0
   m_Name: "\u5730\u56FE (1)"
   m_TagString: Untagged
@@ -5324,7 +5313,6 @@ Transform:
   m_LocalScale: {x: 5.5, y: 5.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
@@ -5982,7 +5970,6 @@ Transform:
   - {fileID: 1750025402}
   - {fileID: 1454612866}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1433915257
@@ -6767,7 +6754,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1607486797
