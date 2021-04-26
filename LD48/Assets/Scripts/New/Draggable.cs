@@ -38,12 +38,12 @@ public class DraggableItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     private void Start() {
         start = RectTransform.localPosition;
-        timer = UIManager.Instance.infoTipShowTime;
+        //timer = UIManager.Instance.infoTipShowTime;
     }
 
     public void OnBeginDrag(PointerEventData eventData) {
         isDragging = true;
-        UIManager.Instance.InfoTip.SetActive(false);
+        //UIManager.Instance.InfoTip.SetActive(false);
         CanvasGroup.blocksRaycasts = false;
     }
 
@@ -63,19 +63,19 @@ public class DraggableItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
     public void OnPointerExit(PointerEventData eventData) {
         isMouseOver = false;
-        timer = UIManager.Instance.infoTipShowTime;
-        UIManager.Instance.InfoTip.SetActive(false);
+        //timer = UIManager.Instance.infoTipShowTime;
+        //UIManager.Instance.InfoTip.SetActive(false);
     }
 
     public void Update() {
-        if (!isDragging && isMouseOver) {
-            if (timer > 0) {
-                timer -= Time.deltaTime;
-            } else if (timer <= 0) {
-                if (!UIManager.Instance.InfoTip.activeSelf)
-                    UIManager.Instance.InfoTip.SetActive(true);
-            }
-        }
+        //if (!isDragging && isMouseOver) {
+        //    if (timer > 0) {
+        //        timer -= Time.deltaTime;
+        //    } else if (timer <= 0) {
+        //        if (!UIManager.Instance.InfoTip.activeSelf)
+        //            UIManager.Instance.InfoTip.SetActive(true);
+        //    }
+        //}
     }
 
 
