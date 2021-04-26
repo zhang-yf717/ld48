@@ -57,6 +57,6 @@ public class UIManager : MonoBehaviour
 
 
         UIManager.Instance.healthText.text =
-            string.Format("<color={0}>{1}</color> / {2}", color, data.Health, maxHealth);
+            string.Format("<color={0}>{1}</color> / {2}", color, data.Health, data.MaxHealth);
     }
 }

@@ -10,6 +10,12 @@ public class Slot : MonoBehaviour, IDropHandler {
         //     = GetComponent<RectTransform>().anchoredPosition;
         var draggable = eventData.pointerDrag.GetComponent<Draggable>();
         draggable.ApplyEffect(group);
-        Destroy(draggable.gameObject);
+        draggable.gameObject.SetActive(false);
+        var cnt = 0;
+        foreach (var loc in UIManager.Instance.powerupLocations) {
+            // loc.transform;
+            if (loc.activeSelf == true) cnt++;
+        }
+        if (cnt == 4) GameManager.Instance.TurnStart(0);
     }
 }

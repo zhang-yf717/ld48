@@ -12,6 +12,7 @@ public class Hero : Actor
         atkTimer = data.AtkIntv;
 
         OnAttack += (Actor actor) => {
+            Debug.Log("Hero attacks " + actor.name);
             atkTimer = data.AtkIntv;
 
             // --- placeholder animation

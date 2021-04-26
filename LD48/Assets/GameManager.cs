@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
         UIManager.Instance.UIRoots[1].SetActive(true);
         foreach (var loc in UIManager.Instance.powerupLocations) {
             // loc.transform;
+            loc.SetActive(true);
         }
     }
 }
